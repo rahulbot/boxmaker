@@ -1,0 +1,37 @@
+<!DOCTYPE project [
+    <!ENTITY common SYSTEM "./common-build.xml">
+]>
+
+<!-- Build file for the BoxMaker application. You need the Ant build tool to run this.  -->
+
+<project name="BoxMaker" default="java.compile" basedir=".">
+
+	<description>
+	This buildfile is used to build BoxMaker.
+	</description>
+
+	<property name="app.ver" value="1.5.2"/>
+	<property name="app.abbr" value="BOX"/>
+
+	<!-- include system default template -->
+	&common;
+
+	<!-- for releasing the software -->
+	<fileset id="release-files" dir="${basedir}">
+		<include name="${app.jarfile}"/>
+		<include name="readme.txt"/>
+	</fileset>
+	
+	<!-- testing executables... -->
+	<target name="app.run">
+		<java classname="com.rahulbotics.boxmaker.BoxMaker" fork="true">
+         <classpath>
+           <pathelement location="${app.jarfile}"/>
+           <pathelement path="${java.class.path}"/>
+         </classpath>
+       </java>
+	</target>
+
+</project>
+
+ 
