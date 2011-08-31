@@ -16,22 +16,6 @@
 	<!-- include system default template -->
 	&common;
 
-	<!-- for releasing the software -->
-	<fileset id="release-files" dir="${basedir}">
-		<include name="${app.jarfile}"/>
-		<include name="readme.txt"/>
-	</fileset>
-	
-	<!-- testing executables... -->
-	<target name="app.run">
-		<java classname="com.rahulbotics.boxmaker.BoxMaker" fork="true">
-         <classpath>
-           <pathelement location="${app.jarfile}"/>
-           <pathelement path="${java.class.path}"/>
-         </classpath>
-       </java>
-	</target>
-
 </project>
 
  

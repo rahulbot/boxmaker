@@ -67,26 +67,6 @@ files via the DTD system entity reference feature.
 		<jar jarfile="${app.jarfile}" basedir="${dir.build}" />
 	</target>
 	
-	<!-- build an executable of the compiled files into the release dir -->
-	<target name="release">
-        <property name="app.dirname" value="${app.name} v${app.ver}" />
-        <!-- Linux -->
-        <copy todir="${dir.dist}/${app.dirname}">
-            <fileset refid="release-files"/>
-        </copy>
-        <copy file="${dir.support}/${app.name}.sh" todir="${dir.dist}/${app.dirname}" />
-        <chmod file="${dir.dist}/${app.dirname}/${app.name}.sh" perm="+x"/>
-        <delete>    <!-- get rid of OSX files -->
-            <fileset dir="${dir.dist}/${app.dirname}/"
-                includes="**/*.DS_Store"/>
-        </delete>
-        <tar destfile="${dir.dist}/${app.name}.tar">
-            <tarfileset dir="${dir.dist}/${app.dirname}" prefix="${app.dirname}"/>
-        </tar>
-        <gzip src="${dir.dist}/${app.name}.tar" zipfile="${dir.dist}/${app.name}.tgz"/>
-        <delete file="${dir.dist}/${app.name}.tar"/>
-	</target>
-	
 	<!-- build the javadoc... -->
 	<target name="doc.javadoc">
 		<delete dir="${dir.javadoc}"/>
