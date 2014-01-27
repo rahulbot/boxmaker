@@ -12,8 +12,6 @@ files via the DTD system entity reference feature.
 	<property name="dir.build" value="${basedir}/bin"/>
 	<property name="dir.resources" value="${basedir}/support/resources"/>
 	<property name="dir.lib" value="${basedir}/lib"/>
-	<property name="dir.dist" value="${basedir}/release"/>
-	<property name="dir.java-lib" value="${basedir}/../java-lib/release/"/>
 	<property name="dir.doc" value="${basedir}/doc"/>
 	<property name="dir.support" value="${basedir}/support"/>
 	<property name="dir.javadoc" value="${dir.doc}/javadoc"/>
@@ -25,7 +23,7 @@ files via the DTD system entity reference feature.
 		<antcall target="init"/>
 		<antcall target="clean"/>
 		<antcall target="java.compile"/>
-		<antcall target="release"/>
+		<antcall target="java.jar"/>
 	</target>
 
     <!-- remove all the compiled files -->
