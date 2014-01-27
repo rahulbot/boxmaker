@@ -10,7 +10,7 @@
 	This buildfile is used to build BoxMaker.
 	</description>
 
-	<property name="app.ver" value="1.6"/>
+	<property name="app.ver" value="1.7"/>
 	<property name="app.abbr" value="BOX"/>
 
 	<!-- include system default template -->
